@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+    http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <bean id="CardServices" class="ir.freeland.spring.usebean.CardServices"/>
+  <bean id="DatabaseManagment" class="ir.freeland.spring.usebean.DatabaseManagment"/>
+
+  <bean id="InternetbankServices" class="ir.freeland.spring.usebean.InternetbankServices">
+    <constructor-arg name="CardServices" ref="CardServices"/>
+    <constructor-arg name="DatabaseManagment" ref="DatabaseManagment"/>
+  </bean>
+
+</beans>
